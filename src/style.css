@@ -1,76 +1,183 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000;
-    color: #fff;
-  }
-  .navbar-custom {
-    background-color: #222;
-  }
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar-custom {
+  background-color: #222;
+}
+
+.sidebar {
+  width: 120px;
+  background-color: #222;
+  position: fixed;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.main-content {
+  margin-left: 120px;
+}
+
+
+
+@media (max-width: 768px) {
   .sidebar {
-    width: 120px;
-    background-color: #222;
-    position: fixed;
-    height: 100%;
-    padding-top: 20px;
-  }
-  .sidebar a {
-    padding: 10px;
-    text-align: center;
-    color: #fff;
-    display: block;
-    text-decoration: none;
-  }
-  .sidebar a:hover {
-    background-color: #444;
+    display: none;
   }
   .main-content {
-    margin-left: 120px;
+    margin-left: 0;
   }
-  @media (max-width: 768px) {
-    .sidebar {
-      display: none;
-    }
-    .main-content {
-      margin-left: 0;
-    }
-  }
-  .skill-bar {
-    background-color: #444;
-    height: 28px;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  .skill-level {
-    background-color: #666;
-    height: 100%;
-  }
+}
 
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/static/Montserrat-Regular.ttf') format('truetype'),
-         url('fonts/static/Montserrat-Regular.woff') format('woff'),
-         url('fonts/static/Montserrat-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/static/Montserrat-Bold.ttf') format('truetype'),
-         url('fonts/static/Montserrat-Bold.woff') format('woff'),
-         url('fonts/static/Montserrat-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-  }
+/* Skill Bar Container */
+.skill-bar {
+  background-color: #444;
+  height: 28px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
 
-  h1 {
-    font-weight: 700; /* Bold */
+
+
+/* Skill Level Bar */
+.skill-level {
+  background-color: #666;
+  height: 100%;
+  width: 0; /* Start with 0 width */
+  border-radius: 5px;
+  transition: width 2s ease-in-out; /* Smooth animation */
+}
+
+/* Animation when skill bar is visible */
+.skill-bar.animate .skill-level {
+  width: var(--skill-width); /* Animate to the specified width */
+}
+
+#leadphoto {
+  width: 30%;
+  height: 1500px;
+  object-fit: cover;
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/static/Montserrat-Regular.ttf') format('truetype'),
+       url('fonts/static/Montserrat-Regular.woff') format('woff'),
+       url('fonts/static/Montserrat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/static/Montserrat-Bold.ttf') format('truetype'),
+       url('fonts/static/Montserrat-Bold.woff') format('woff'),
+       url('fonts/static/Montserrat-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 700; /* Bold */
+}
+
+p {
+  font-weight: 400; /* Regular */
+}
+
+/* Stats section styling */
+#stats {
+  padding: 50px 0;
+}
+
+.stats-value {
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Animation for the numbers */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-value.animate {
+  animation: countUp 1s ease-out forwards;
+}
+.mb-1 {
+  letter-spacing: 5px;
   
-  p {
-    font-weight: 400; /* Regular */
+}
+
+/* Animation styles */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
-  #leadphoto {
-    width: 30%;
-    object-fit: cover;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 2s ease-out forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 2s ease-out forwards;
+}
+
