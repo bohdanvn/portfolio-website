@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- Typed.js for text animations -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -22,7 +22,10 @@
   <a href="#projects">PROJECTS</a>
   <a href="#now-playing">NOW PLAYING</a>
   <a href="#contact">CONTACT</a>
-  <button id="dark-mode-toggle" class="btn btn-secondary mt-3">Toggle Dark Mode</button>
+  <button id="dark-mode-toggle" class="mode-toggle">
+    <i class="fas fa-moon"></i>
+    <span class="toggle-text">Dark Mode</span>
+  </button>
 </nav>
 
 <!-- Navbar for small screens -->
@@ -34,7 +37,10 @@
       <a class="nav-link" href="#projects">PROJECTS</a>
       <a class="nav-link" href="#now-playing">NOW PLAYING</a>
       <a class="nav-link" href="#contact">CONTACT</a>
-      <button id="dark-mode-toggle-mobile" class="btn btn-secondary">Toggle Dark Mode</button>
+      <button id="dark-mode-toggle-mobile" class="mode-toggle">
+        <i class="fas fa-moon"></i>
+        <span class="toggle-text">Dark Mode</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -46,7 +52,16 @@
   <h1 class="display-1">I'm Bohdan.</h1>
   <p class="lead"><span id="typed"></span></p>
   <!-- Add data-src for lazy loading -->
-  <img id="leadphoto" data-src="images/meSobor.jpg" alt="Bohdan" class="img-fluid lazy">
+  <img
+  id="leadphoto"
+  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+  data-src="images/meSobor.jpg"
+  alt="Bohdan"
+  class="img-fluid lazy"
+  width="400"
+  height="600">
+
+
 </header>
 
   <!-- About Section -->
@@ -69,10 +84,6 @@
     <div class="skill-bar">
       <div class="skill-level" data-width= "3%"></div>
     </div>
-    <p class="mb-1">Brawl Stars</p>
-    <div class="skill-bar">
-      <div class="skill-level" data-width= "92%"></div>
-    </div>
     <p class="mb-1">Hardware knowledge</p>
     <div class="skill-bar">
       <div class="skill-level" data-width= "20%"></div>
@@ -90,19 +101,15 @@
     <span class="display-6 stats-value" data-target="1">100+</span><br>Happy Clients
   </div>
   <div class="col-3">
-    <span class="display-6 stats-value" data-target="11">100+</span><br>Meetings
+    <span class="display-6 stats-value" data-target="3">100+</span><br>Meetings
   </div>
 </div>
-
-    <button class="btn btn-light btn-lg">
-      <i class="bi bi-download"></i> Download Resume
-    </button>
 
     <h3 class="text-light mt-5">My Price</h3>
     <hr class="w-25">
     <div class="row">
       <div class="col-md-6">
-        <div class="card bg-dark text-white mb-3">
+        <div class="card bg-dark text-white mb-3 price-card">
           <div class="card-header bg-secondary py-4">
             <h4 class="card-title">Basic</h4>
           </div>
@@ -111,15 +118,22 @@
             <p>Hardware help</p>
             <p>100MB Storage Max (I will work with)</p>
             <p>Mail Support</p>
-            <h2>$ 10</h2>
-            <p class="opacity-25" >per month</p>
-            <p class="text-muted" >per month</p>
-            <button class="btn btn-light">Sign Up</button>
+            <h2>$ 2 = ₴ 80</h2>
+            <p class="opacity-25">per week</p>
+            <p class="text-muted">per week</p>
+            <a
+                href="https://send.monobank.ua/jar/A7AQfwk39d"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-light">
+                Sign Up
+              </a>
           </div>
         </div>
       </div>
+      
       <div class="col-md-6">
-        <div class="card bg-dark text-white mb-3">
+        <div class="card bg-dark text-white mb-3 price-card">
           <div class="card-header bg-secondary py-4">
             <h4 class="card-title">Pro</h4>
           </div>
@@ -129,15 +143,22 @@
             <p>Hardware help</p>
             <p>50GB Storage</p>
             <p>Max rank brawl stars push</p>
-            <p>Tracing IP adress</p>
+            <p>Tracing IP address</p>
             <p>Endless Support</p>
-            <h2>$ 25</h2>
-            <p class="opacity-25" >per month</p>
-            <p class="text-muted">per month</p>
-            <button class="btn btn-light">Sign Up</button>
+            <h2>$ 10 = ₴ 400</h2>
+            <p class="opacity-25">per week</p>
+            <p class="text-muted">per week</p>
+            <a
+                href="https://send.monobank.ua/jar/A7AQfwk39d"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-light">
+                Sign Up
+              </a>
           </div>
         </div>
       </div>
+      
       
 
     <h3 class="text-light mt-5">My Reputation</h3>
@@ -158,70 +179,104 @@
     </div>
   </section>
   <!-- Projects Section -->
+   
   <section class="container py-5" id="projects">
     <h2 class="text-light">Projects</h2>
     <hr class="w-25">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card bg-dark text-white mb-3">
-          <div class="card-header bg-secondary py-4">
-            <h4 class="card-title">Revenue Radar</h4>
-          </div>
-          <div class="card-body">
-            <p>A project to track and analyze revenue streams.</p>
-            <a href="https://github.com/yourusername/revenue-radar" class="btn btn-light">GitHub Repository</a>
-            <a href="https://www.npmjs.com/package/revenue-radar" class="btn btn-light mt-2">NPM Package</a>
-          </div>
+        <div class="col-md-8">
+            <div class="revenue-radar-card">
+                <h4>Revenue Radar</h4>
+                <p>With this project, you can work with your data using three different types of graphs:</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="images/graphbar.png" alt="Graph Type 1" class="img-fluid mb-2">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/graphline.png" alt="Graph Type 2" class="img-fluid mb-2">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/graphpie.png" alt="Graph Type 3" class="img-fluid mb-2">
+                    </div>
+                </div>
+                <p>You can also select different timelines:</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="images/choice.png" alt="Timeline Selection" class="img-fluid mb-2">
+                    </div>
+                    <div class="col-md-6">
+                        <p>Additionally, you can hide data you don’t need on the graph (especially useful for pie charts):</p>
+                        <img src="images/hide-data.png" alt="Hide Data Feature" class="img-fluid mb-2">
+                    </div>
+                </div>
+                <p>Customize your preferred color to make the graphs look even better!</p>
+                <p>Read more in the README file or check out the links below:</p>
+                <a href="https://github.com/avidity/revenue-radar" class="revenue-btn revenue-btn-light">GitHub Repository</a>
+                <a href="https://www.npmjs.com/package/revenue-radar" class="revenue-btn revenue-btn-dark">NPM Package</a>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  <!-- Now Playing Section -->
-  <section class="container py-5" id="now-playing">
-    <h2 class="text-light">Now Playing</h2>
-    <hr class="w-25">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card bg-dark text-white mb-3">
-          <div class="card-header bg-secondary py-4">
-            <h4 class="card-title">Current Favorite Track</h4>
-          </div>
-          <div class="card-body">
-            <p><strong>Song:</strong> Bohemian Rhapsody</p>
-            <p><strong>Artist:</strong> Queen</p>
-            <a href="https://open.spotify.com/track/4u7EnebtmKWzUH433cf5Qv" class="btn btn-light">Listen on Spotify</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
+
+
+<section class="container py-5" id="now-playing">
+  <h2 class="text-light text-center">Now Playing</h2>
+  <hr class="w-25 mx-auto">
+  <p class="text-center text-light">A page showing my current favorite music track!</p>
   
+  <div class="row justify-content-center">
+      <div class="col-md-8">
+          <div class="now-playing-card bg-dark text-white p-4 rounded shadow">
+              <div class="row align-items-center">
+                  <div class="col-md-6">
+                      <h4 class="text-light mb-3">Current Favorite Track</h4>
+                      <h5 class="text-light mb-3">Дзідзьо - Ялта</h5>
+                      <p><strong>Artist:</strong> Дзідзьо</p>
+                      <p><strong>Track:</strong> Ялта</p>
+                      <p>Enjoy listening to this amazing track while you browse!</p>
+                      <div>
+                          <a href="https://open.spotify.com/track/299GRovRwfOPIoE37HwYQA?si=544029efda41400b" class="btn btn-light" target="_blank">Listen on Spotify</a>
+                          <a href="https://youtu.be/Wu0G_9x-6-I?si=8MsJalFQNS-6yuYP" class="btn btn-danger ms-2" target="_blank">Listen on YouTube</a>
+                      </div>
+                  </div>
+                  <div class="col-md-6 text-center">
+                      <img src="images/dzidzio.jpg" alt="Track Image" class="img-fluid rounded-circle mb-3">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
   <!-- Contact Section -->
   <section class="container py-5" id="contact">
     <h2 class="text-light">Contact Me</h2>
     <hr class="w-25">
     <div class="mb-4">
-      <p><i class="bi bi-geo-alt-fill me-2"></i> Chicago, US</p>
-      <p><i class="bi bi-phone-fill me-2"></i> Phone: +00 151515</p>
-      <p><i class="bi bi-envelope-fill me-2"></i> Email: mail@mail.com</p>
+      <p><i class="bi bi-geo-alt-fill me-2"></i> Berlin, GERMANY</p>
+      <p><i class="bi bi-phone-fill me-2"></i> Phone: +39 3277807500</p>
+      <p><i class="bi bi-envelope-fill me-2"></i> Email: baylemabogdan@gmail.com</p>
     </div>
-    <form>
+    <form action="https://formspree.io/f/xzzdvnrz" method="POST">
       <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Name" required>
+        <input type="text" class="form-control" name="name" placeholder="Name" required>
       </div>
       <div class="mb-3">
-        <input type="email" class="form-control" placeholder="Email" required>
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Subject" required>
+        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
       </div>
       <div class="mb-3">
-        <textarea class="form-control" placeholder="Message" required></textarea>
+        <textarea class="form-control" name="message" placeholder="Message" required></textarea>
       </div>
       <button type="submit" class="btn btn-light">
         <i class="bi bi-send-fill"></i> Send Message
       </button>
     </form>
+    
   </section>
 
    <!-- Footer -->

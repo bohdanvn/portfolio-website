@@ -13,10 +13,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
   const body = document.body;
 
-  function toggleDarkMode() {
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
-  }
+  // Updated Dark Mode Toggle Logic
+function toggleDarkMode() {
+  const isLight = document.body.getAttribute('data-theme') === 'light';
+  document.body.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  
+  const toggleButtons = document.querySelectorAll('.mode-toggle');
+  toggleButtons.forEach(btn => {
+    btn.innerHTML = isLight ? 
+      '<i class="fas fa-moon"></i><span class="toggle-text">Dark Mode</span>' : 
+      '<i class="fas fa-sun"></i><span class="toggle-text">Light Mode</span>';
+  });
+
+  localStorage.setItem('theme', isLight ? 'dark' : 'light');
+}
+
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.setAttribute('data-theme', savedTheme);
+document.querySelectorAll('.mode-toggle').forEach(btn => {
+  btn.innerHTML = savedTheme === 'dark' ? 
+    '<i class="fas fa-moon"></i><span class="toggle-text">Dark Mode</span>' : 
+    '<i class="fas fa-sun"></i><span class="toggle-text">Light Mode</span>';
+});
 
   darkModeToggle.addEventListener('click', toggleDarkMode);
   darkModeToggleMobile.addEventListener('click', toggleDarkMode);
@@ -129,3 +148,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach(section => observer.observe(section));
 });
+
