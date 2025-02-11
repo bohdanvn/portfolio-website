@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>About Me</title>
   <!-- Bootstrap CSS -->
   <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,12 +12,17 @@
   <!-- Typed.js for text animations -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Підключаємо confetti.min.js перед основним JS -->
+  <script src="confetti.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 <body>
 
 <!-- Sidebar -->
 <nav class="sidebar d-none d-md-block">
-  <img src="images/ferrari.jpg" alt="Avatar" class="img-fluid mb-3">
+  <img data-src="images/ferrari.jpg" alt="Avatar" class="img-fluid lazy mb-3">
   <a href="#home" class="active">HOME</a>
   <a href="#about">ABOUT</a>
   <a href="#projects">PROJECTS</a>
@@ -26,6 +32,7 @@
     <i class="fas fa-moon"></i>
     <span class="toggle-text">Dark Mode</span>
   </button>
+ 
 </nav>
 
 <!-- Navbar for small screens -->
@@ -66,11 +73,11 @@
 
   <!-- About Section -->
   <section class="container py-5" id="about">
-    <h2 class="text-light">Bohdan Bailema</h2>
+    <h2>Bohdan Bailema</h2>
     <hr class="w-50">
     <p>A 18-year-old (maybe 17) computer science student and enthusiast passionate about coding, problem-solving, and exploring the latest tech innovations. This is a simple website about me.</p>
-
-    <h3 class="text-light mt-5">My Skills</h3>
+    <button class="confetti-btn btn btn-secondary mt-3">🎉 COOL!</button>
+    <h3 class=" mt-5">My Skills</h3>
     <hr class="w-25">
     <p class="mb-1">Web Design</p>
     <div class="skill-bar">
@@ -105,11 +112,11 @@
   </div>
 </div>
 
-    <h3 class="text-light mt-5">My Price</h3>
+    <h3 class=" mt-5">My Price</h3>
     <hr class="w-25">
     <div class="row">
       <div class="col-md-6">
-        <div class="card bg-dark text-white mb-3 price-card">
+        <div class="card mb-3 price-card">
           <div class="card-header bg-secondary py-4">
             <h4 class="card-title">Basic</h4>
           </div>
@@ -133,7 +140,7 @@
       </div>
       
       <div class="col-md-6">
-        <div class="card bg-dark text-white mb-3 price-card">
+        <div class="card mb-3 price-card">
           <div class="card-header bg-secondary py-4">
             <h4 class="card-title">Pro</h4>
           </div>
@@ -161,27 +168,29 @@
       
       
 
-    <h3 class="text-light mt-5">My Reputation</h3>
+    <h3 class=" mt-5">My Reputation</h3>
     <hr class="w-25">
     <div class="d-flex align-items-center my-4">
-      <img src="images/LebronAi.webp" alt="Avatar" class="rounded-circle me-3" style="width: 80px;">
+      <img data-src="images/LebronAi.webp" alt="Avatar" class="rounded-circle me-3 lazy" style="width: 80px;">
       <div>
         <p class="mb-0"><strong>Franklin Fox.</strong> CEO at Mighty Schools.</p><br>
         <p>Bohdan saved us from a web disaster.</p>
       </div>
     </div>
     <div class="d-flex align-items-center my-4">
-      <img src="images/kaua.jpg" alt="Avatar" class="rounded-circle me-3" style="width: 80px; height: 80px; ">
+      <img data-src="images/kaua.jpg" alt="Avatar" class="rounded-circle me-3 lazy" style="width: 80px; height: 80px; ">
       <div>
         <p class="mb-0"><strong>Kaua Campus.</strong> CEO at Company.</p><br>
         <p>No one is better than Bohdan Bailema.</p>
       </div>
     </div>
+    
+    
   </section>
   <!-- Projects Section -->
    
   <section class="container py-5" id="projects">
-    <h2 class="text-light">Projects</h2>
+    <h2 >Projects</h2>
     <hr class="w-25">
     <div class="row">
         <div class="col-md-8">
@@ -190,23 +199,23 @@
                 <p>With this project, you can work with your data using three different types of graphs:</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="images/graphbar.png" alt="Graph Type 1" class="img-fluid mb-2">
+                        <img data-src="images/graphbar.png" alt="Graph Type 1" class="img-fluid mb-2 lazy">
                     </div>
                     <div class="col-md-4">
-                        <img src="images/graphline.png" alt="Graph Type 2" class="img-fluid mb-2">
+                        <img data-src="images/graphline.png" alt="Graph Type 2" class="img-fluid mb-2 lazy">
                     </div>
                     <div class="col-md-4">
-                        <img src="images/graphpie.png" alt="Graph Type 3" class="img-fluid mb-2">
+                        <img data-src="images/graphpie.png" alt="Graph Type 3" class="img-fluid mb-2 lazy">
                     </div>
                 </div>
                 <p>You can also select different timelines:</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="images/choice.png" alt="Timeline Selection" class="img-fluid mb-2">
+                        <img data-src="images/choice.png" alt="Timeline Selection" class="img-fluid mb-2 lazy">
                     </div>
                     <div class="col-md-6">
                         <p>Additionally, you can hide data you don’t need on the graph (especially useful for pie charts):</p>
-                        <img src="images/hide-data.png" alt="Hide Data Feature" class="img-fluid mb-2">
+                        <img data-src="images/hide-data.png" alt="Hide Data Feature" class="img-fluid mb-2 lazy">
                     </div>
                 </div>
                 <p>Customize your preferred color to make the graphs look even better!</p>
@@ -216,13 +225,13 @@
             </div>
         </div>
     </div>
+    <button class="confetti-btn btn btn-primary mt-3">🎉 WOW!</button>
 </section>
-
+<!-- Now Playing Section -->
 
 <section class="container py-5" id="now-playing">
-  <h2 class="text-light text-center">Now Playing</h2>
+  <h2 class=" text-center">Now Playing</h2>
   <hr class="w-25 mx-auto">
-  <p class="text-center text-light">A page showing my current favorite music track!</p>
   
   <div class="row justify-content-center">
       <div class="col-md-8">
@@ -240,11 +249,14 @@
                       </div>
                   </div>
                   <div class="col-md-6 text-center">
-                      <img src="images/dzidzio.jpg" alt="Track Image" class="img-fluid rounded-circle mb-3">
+                      <img data-src="images/dzidzio.jpg" alt="Track Image" class="img-fluid rounded-circle lazy mb-3">
                   </div>
+                  
               </div>
+              <button class="confetti-btn btn btn-dark mt-3">🎉 BEST SONG!</button>
           </div>
       </div>
+      
   </div>
 </section>
 
@@ -252,7 +264,7 @@
 
   <!-- Contact Section -->
   <section class="container py-5" id="contact">
-    <h2 class="text-light">Contact Me</h2>
+    <h2 >Contact Me</h2>
     <hr class="w-25">
     <div class="mb-4">
       <p><i class="bi bi-geo-alt-fill me-2"></i> Berlin, GERMANY</p>
@@ -280,14 +292,20 @@
   </section>
 
    <!-- Footer -->
-   <footer class="container py-5 text-center">
-    <i class="bi bi-facebook me-3"></i>
+<footer class="container py-5 text-center">
+
+  <a href="https://www.instagram.com/bohdanvnn?utm_source=qr&igsh=NnYzZzU2a3VtN2lo" target="_blank" class="text-decoration-none">
     <i class="bi bi-instagram me-3"></i>
-    <i class="bi bi-snapchat me-3"></i>
-    <i class="bi bi-pinterest me-3"></i>
-    <i class="bi bi-twitter me-3"></i>
-    <i class="bi bi-linkedin me-3"></i>
+  </a>
+  <a 
+    href="https://send.monobank.ua/jar/A7AQfwk39d"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="me-2 text-decoration-none">
+    Support me
+  </a>
     <p class="mt-3">Powered by <a href="https://getbootstrap.com/" target="_blank" class="text-decoration-none">Bootstrap</a></p>
+    
   </footer>
 </div>
 
@@ -295,5 +313,6 @@
 <!-- Bootstrap JS -->
 <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
