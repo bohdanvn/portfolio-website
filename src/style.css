@@ -500,3 +500,27 @@ footer a:hover i {
   border: none !important;
 }
 
+.confetti-btn {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.confetti-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.confetti-btn:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}

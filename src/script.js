@@ -149,12 +149,28 @@ document.addEventListener('DOMContentLoaded', function () {
     sections.forEach(section => observer.observe(section));
 });
 
-const button = document.getElementById('.confetti-button');
-
-button.addEventListener('click', () => {
-    confetti({
+// Confetti buttons functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const confettiButtons = document.querySelectorAll('.confetti-btn');
+  
+  confettiButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      // Trigger confetti
+      confetti({
         particleCount: 200,
         spread: 70,
         origin: { y: 0.6 }
+      });
+
+      // Hide button temporarily
+      e.target.style.opacity = '0';
+      e.target.style.pointerEvents = 'none';
+
+      // Re-enable after 2 seconds
+      setTimeout(() => {
+        e.target.style.opacity = '1';
+        e.target.style.pointerEvents = 'auto';
+      }, 2000);
     });
+  });
 });
