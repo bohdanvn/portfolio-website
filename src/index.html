@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>About Me</title>
+  <link rel="icon" type="image/x-icon"  href="images/uzbekbanana.jpg">
   <!-- Bootstrap CSS -->
   <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
@@ -22,7 +23,7 @@
 
 <!-- Sidebar -->
 <nav class="sidebar d-none d-md-block">
-  <img data-src="images/ferrari.jpg" alt="Avatar" class="img-fluid lazy mb-3">
+  <img loading="lazy" src="images/ferrari.jpg" alt="Avatar" class="img-fluid mb-3">
   <a href="#home" class="active">HOME</a>
   <a href="#about">ABOUT</a>
   <a href="#projects">PROJECTS</a>
@@ -35,22 +36,25 @@
  
 </nav>
 
-<!-- Navbar for small screens -->
-<nav class="navbar navbar-custom navbar-expand-lg d-block d-md-none">
-  <div class="container-fluid">
-    <div class="navbar-nav w-100 justify-content-around">
-      <a class="nav-link" href="#home">HOME</a>
-      <a class="nav-link" href="#about">ABOUT</a>
-      <a class="nav-link" href="#projects">PROJECTS</a>
-      <a class="nav-link" href="#now-playing">NOW PLAYING</a>
-      <a class="nav-link" href="#contact">CONTACT</a>
-      <button id="dark-mode-toggle-mobile" class="mode-toggle">
-        <i class="fas fa-moon"></i>
-        <span class="toggle-text">Dark Mode</span>
-      </button>
-    </div>
-  </div>
+<button id="mobile-menu-button" class="mobile-menu-btn">
+  <i class="fas fa-bars"></i>
+</button>
+<!-- Mobile Sidebar -->
+<nav class="mobile-sidebar" id="mobile-sidebar">
+  <button id="close-menu-button" class="close-menu-btn">&times;</button>
+  <img loading="lazy" src="images/ferrari.jpg" alt="Avatar" class="img-fluid mb-3 mt-5">
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#projects">PROJECTS</a>
+  <a href="#now-playing">NOW PLAYING</a>
+  <a href="#contact">CONTACT</a>
+  <button id="dark-mode-toggle-mobile" class="mode-toggle mt-3">
+    <i class="fas fa-moon"></i>
+    <span class="toggle-text">Dark Mode</span>
+  </button>
 </nav>
+
+
 
 <!-- Main Content -->
 <div class="main-content">
@@ -58,13 +62,13 @@
 <header class="text-center py-5" id="home">
   <h1 class="display-1">I'm Bohdan.</h1>
   <p class="lead"><span id="typed"></span></p>
-  <!-- Add data-src for lazy loading -->
+  
   <img
   id="leadphoto"
-  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-  data-src="images/meSobor.jpg"
+  loading="lazy"
+  src="images/meSobor.jpg"
   alt="Bohdan"
-  class="img-fluid lazy"
+  class="img-fluid"
   width="400"
   height="600">
 
@@ -76,7 +80,6 @@
     <h2>Bohdan Bailema</h2>
     <hr class="w-50">
     <p>A 18-year-old (maybe 17) computer science student and enthusiast passionate about coding, problem-solving, and exploring the latest tech innovations. This is a simple website about me.</p>
-    <button class="confetti-btn btn btn-secondary mt-3">🎉 COOL!</button>
     <h3 class=" mt-5">My Skills</h3>
     <hr class="w-25">
     <p class="mb-1">Web Design</p>
@@ -111,7 +114,7 @@
     <span class="display-6 stats-value" data-target="3">100+</span><br>Meetings
   </div>
 </div>
-
+<!-- Price Section -->
     <h3 class=" mt-5">My Price</h3>
     <hr class="w-25">
     <div class="row">
@@ -166,24 +169,27 @@
         </div>
       </div>
       
-      
+      <!-- Reputation Section -->
 
     <h3 class=" mt-5">My Reputation</h3>
     <hr class="w-25">
+    <div>
     <div class="d-flex align-items-center my-4">
-      <img data-src="images/LebronAi.webp" alt="Avatar" class="rounded-circle me-3 lazy" style="width: 80px;">
+      <img loading="lazy" src="images/LebronAi.webp" alt="Avatar" class="rounded-circle me-3 " style="width: 80px;">
       <div>
         <p class="mb-0"><strong>Franklin Fox.</strong> CEO at Mighty Schools.</p><br>
         <p>Bohdan saved us from a web disaster.</p>
       </div>
     </div>
     <div class="d-flex align-items-center my-4">
-      <img data-src="images/kaua.jpg" alt="Avatar" class="rounded-circle me-3 lazy" style="width: 80px; height: 80px; ">
+      <img loading="lazy" src="images/kaua.jpg" alt="Avatar" class="rounded-circle me-3" style="width: 80px; height: 80px; ">
       <div>
         <p class="mb-0"><strong>Kaua Campus.</strong> CEO at Company.</p><br>
         <p>No one is better than Bohdan Bailema.</p>
       </div>
     </div>
+    <button id="demo" class="btn btn-secondary mt-3">🎉 Press this button if you believe they are real!</button>
+  </div>
     
     
   </section>
@@ -199,23 +205,23 @@
                 <p>With this project, you can work with your data using three different types of graphs:</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <img data-src="images/graphbar.png" alt="Graph Type 1" class="img-fluid mb-2 lazy">
+                        <img loading="lazy" src="images/graphbar.png" alt="Graph Type 1" class="img-fluid mb-2 ">
                     </div>
                     <div class="col-md-4">
-                        <img data-src="images/graphline.png" alt="Graph Type 2" class="img-fluid mb-2 lazy">
+                        <img loading="lazy" src="images/graphline.png" alt="Graph Type 2" class="img-fluid mb-2 ">
                     </div>
                     <div class="col-md-4">
-                        <img data-src="images/graphpie.png" alt="Graph Type 3" class="img-fluid mb-2 lazy">
+                        <img loading="lazy" src="images/graphpie.png" alt="Graph Type 3" class="img-fluid mb-2 ">
                     </div>
                 </div>
                 <p>You can also select different timelines:</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <img data-src="images/choice.png" alt="Timeline Selection" class="img-fluid mb-2 lazy">
+                        <img loading="lazy" src="images/choice.png" alt="Timeline Selection" class="img-fluid mb-2 ">
                     </div>
                     <div class="col-md-6">
                         <p>Additionally, you can hide data you don’t need on the graph (especially useful for pie charts):</p>
-                        <img data-src="images/hide-data.png" alt="Hide Data Feature" class="img-fluid mb-2 lazy">
+                        <img loading="lazy" src="images/hide-data.png" alt="Hide Data Feature" class="img-fluid mb-2 ">
                     </div>
                 </div>
                 <p>Customize your preferred color to make the graphs look even better!</p>
@@ -225,7 +231,6 @@
             </div>
         </div>
     </div>
-    <button class="confetti-btn btn btn-primary mt-3">🎉 WOW!</button>
 </section>
 <!-- Now Playing Section -->
 
@@ -242,18 +247,24 @@
                       <h5 class="text-light mb-3">Дзідзьо - Ялта</h5>
                       <p><strong>Artist:</strong> Дзідзьо</p>
                       <p><strong>Track:</strong> Ялта</p>
-                      <p>Enjoy listening to this amazing track while you browse!</p>
-                      <div>
-                          <a href="https://open.spotify.com/track/299GRovRwfOPIoE37HwYQA?si=544029efda41400b" class="btn btn-light" target="_blank">Listen on Spotify</a>
-                          <a href="https://youtu.be/Wu0G_9x-6-I?si=8MsJalFQNS-6yuYP" class="btn btn-danger ms-2" target="_blank">Listen on YouTube</a>
-                      </div>
+                      <p>Enjoy listening to this amazing track while you browse! Listen on:</p>
+                      <div class="d-flex gap-3">
+                        <a href="https://open.spotify.com/track/299GRovRwfOPIoE37HwYQA?si=544029efda41400b" 
+                           class="btn btn-spotify d-flex align-items-center" target="_blank">
+                            <i class="fab fa-spotify me-2"></i>Spotify
+                        </a>
+                        <a href="https://youtu.be/Wu0G_9x-6-I?si=8MsJalFQNS-6yuYP" 
+                           class="btn btn-youtube d-flex align-items-center" target="_blank">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </a>
+                    </div>
+                    
                   </div>
                   <div class="col-md-6 text-center">
-                      <img data-src="images/dzidzio.jpg" alt="Track Image" class="img-fluid rounded-circle lazy mb-3">
+                      <img loading="lazy" src="images/dzidzio.jpg" alt="Track Image" class="img-fluid rounded-circle  mb-3">
                   </div>
                   
               </div>
-              <button class="confetti-btn btn btn-dark mt-3">🎉 BEST SONG!</button>
           </div>
       </div>
       

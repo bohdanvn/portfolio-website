@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
   const body = document.body;
 
-  // Updated Dark Mode Toggle Logic
+  //  Dark Mode Toggle Logic
 function toggleDarkMode() {
   const isLight = document.body.getAttribute('data-theme') === 'light';
   document.body.setAttribute('data-theme', isLight ? 'dark' : 'light');
@@ -45,30 +45,9 @@ document.querySelectorAll('.mode-toggle').forEach(btn => {
     body.classList.add('dark-mode');
   }
 
-  // Lazy loading for images
-document.addEventListener('DOMContentLoaded', function () {
-    const lazyImages = document.querySelectorAll('.lazy');
   
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src; // Set the src from data-src
-          img.classList.remove('lazy'); // Remove the lazy class
-          observer.unobserve(img); // Stop observing the image
-        }
-      });
-    }, {
-      rootMargin: '0px', // Adjust this value to trigger loading earlier
-      threshold: 0.1 // Trigger when 10% of the image is visible
-    });
-  
-    lazyImages.forEach(img => observer.observe(img));
-  });
-
 
 // Animate skill bars when they come into view
-// Add delay between skill bar animations
 document.addEventListener('DOMContentLoaded', function () {
     const skillBars = document.querySelectorAll('.skill-bar');
   
@@ -91,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     skillBars.forEach(skillBar => observer.observe(skillBar));
   });
 
-  // Add delay between stats number animations
+  
 // Animate stats numbers when they come into view
 document.addEventListener('DOMContentLoaded', function () {
     const statsValues = document.querySelectorAll('.stats-value');
@@ -150,27 +129,28 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Confetti buttons functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const confettiButtons = document.querySelectorAll('.confetti-btn');
-  
-  confettiButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      // Trigger confetti
-      confetti({
-        particleCount: 200,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
+let confetti = new Confetti('demo');
 
-      // Hide button temporarily
-      e.target.style.opacity = '0';
-      e.target.style.pointerEvents = 'none';
+// Replace the existing mobile menu code with:
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileSidebar = document.getElementById('mobile-sidebar');
+const closeMenuButton = document.getElementById('close-menu-button');
 
-      // Re-enable after 2 seconds
-      setTimeout(() => {
-        e.target.style.opacity = '1';
-        e.target.style.pointerEvents = 'auto';
-      }, 2000);
-    });
-  });
+// Toggle mobile menu
+mobileMenuButton.addEventListener('click', () => {
+  mobileSidebar.classList.add('active');
+});
+
+// Close menu
+closeMenuButton.addEventListener('click', () => {
+  mobileSidebar.classList.remove('active');
+});
+
+// Close when clicking outside
+document.addEventListener('click', (event) => {
+  if (!mobileSidebar.contains(event.target) && 
+      event.target !== mobileMenuButton &&
+      !event.target.closest('.mobile-menu-btn')) {
+    mobileSidebar.classList.remove('active');
+  }
 });

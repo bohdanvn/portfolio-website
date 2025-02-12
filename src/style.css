@@ -1,15 +1,19 @@
+/* body */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #000;
-  color: #fff;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  transition: background-color var(--transition-time) ease, 
+    color var(--transition-time) ease;
 }
+
 
 body.dark-mode {
   background-color: #fff;
   color: #000;
 }
 
+/* navbar */
 
 .navbar-custom {
   background-color: #222;
@@ -81,14 +85,6 @@ body.dark-mode {
   object-fit: cover;
 }
 
-.lazy {
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.lazy.loaded {
-  opacity: 1;
-}
 
 /* Fonts */
 
@@ -182,6 +178,8 @@ p {
   animation: fadeInRight 2s ease-out forwards;
 }
 
+/* projects section */
+
 .revenue-radar-card {
   background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
   border-radius: 15px;
@@ -236,7 +234,7 @@ p {
 .revenue-btn-dark:hover {
   background: #3a3a3a;
 }
-
+/* price section */
 .price-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -245,7 +243,7 @@ p {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
-
+/* projects section */
 .revenue-radar-card {
   max-width: 100%;
   margin: 0 auto;
@@ -265,6 +263,7 @@ p {
 .row {
   margin-bottom: 20px;
 }
+/* now playing section */
 #now-playing {
   
   color: #fff;
@@ -350,12 +349,7 @@ p {
   --secondary-text: #4a4a4a;
 }
 
-body {
-  background-color: var(--primary-bg);
-  color: var(--primary-text);
-  transition: background-color var(--transition-time) ease, 
-             color var(--transition-time) ease;
-}
+
 
 /* Improved Toggle Button */
 .mode-toggle {
@@ -423,11 +417,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-text);
 }
 
-.lazy {
-  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
-  background-size: 200% 100%;
-  animation: 1.5s shine linear infinite;
-}
+
 
 @keyframes shine {
   to {
@@ -444,7 +434,7 @@ footer a:hover i {
   color: #e1306c; /* Instagram's brand color */
 }
 
-/* Add to style.css */
+
 /* Fix stats numbers color */
 [data-theme="light"] .stats-value {
   color: #000 !important;
@@ -500,27 +490,87 @@ footer a:hover i {
   border: none !important;
 }
 
-.confetti-btn {
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
+.btn-spotify {
+  background-color: #1DB954;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.confetti-btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease-out, height 0.3s ease-out;
+.btn-spotify:hover {
+  background-color: #1ed760;
 }
 
-.confetti-btn:active::after {
-  width: 200px;
-  height: 200px;
-  opacity: 0;
+.btn-youtube {
+  background-color: #FF0000;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-youtube:hover {
+  background-color: #cc0000;
+}
+
+/* Кнопка для відкриття мобільного меню */
+.mobile-menu-btn {
+  display: none; /* Hide by default */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 22;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block; /* Show on mobile */
+  }
+  
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--card-bg);
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .mobile-sidebar.active {
+    left: 0;
+  }
+  
+  .close-menu-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: var(--primary-text);
+    font-size: 24px;
+  }
+  
+  .mobile-sidebar a {
+    color: var(--primary-text);
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+  }
 }
