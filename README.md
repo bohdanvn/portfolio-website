@@ -1,50 +1,160 @@
 # portfolio-website
 # Bohdan's Portfolio Website
 
-![Project Preview](screenshot.jpg)
 
-A modern portfolio website featuring dark/light mode toggle, animations, and interactive elements.
+Welcome to **Portfolio Website**, a personal portfolio that showcases my skills, experience, and personality in a stylish and interactive way. The site features smooth animations, a dark mode toggle, and various JavaScript-powered effects for an engaging experience.
+A modern personal portfolio website featuring dark/light themes, interactive elements, and responsive design.
+
 
 ## Features
 
-- 🌓 Smart Dark/Light Mode with System Preference Detection
-- 🎉 Confetti Animations on Interactions
-- 📱 Fully Responsive Design
-- 🚀 Performance Optimizations (Lazy Loading, Image Compression)
-- 🔥 Interactive Elements with Smooth Animations
-- 📦 Modular Component Architecture
+- 🌓 Dark/Light theme toggle
+- 📱 Mobile-responsive design with sidebar menu
+- 🎯 Interactive skill progress bars
+- 📊 Animated statistics counter
+- 🎵 "Now Playing" music section
+- 💰 Pricing plans with payment integration
+- 📨 Contact form with Formspree integration
+- 🎉 Confetti animation effects
 
 ## Technologies Used
 
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white)](https://swiperjs.com/)
-[![Confetti.js](https://img.shields.io/badge/Confetti.js-FF6B6B?style=for-the-badge)](https://confetti.js.org/)
+- HTML5
+- CSS3 (Custom Properties, Animations)
+- JavaScript (ES6+)
+- [Bootstrap 5](https://getbootstrap.com/)
+- [Typed.js](https://github.com/mattboldt/typed.js/)
+- [Font Awesome](https://fontawesome.com/)
+- [Confetti.js](https://github.com/matteobruni/tsparticles)
 
-## Installation
+## 📁 Project Structure
 
-1. Clone the repository:
-```bash
-git clone https://github.com/bohdanvn/your-repo.git
+```
+📂 about-me-website
+│── 📂 src
+│    │── 📄 index.html          # Main HTML file
+│    │── 🎨 style.css           # Custom CSS styles
+│    │── 🎭 script.js           # JavaScript for interactivity
+│    │── 🎊 confetti.min.js     # Confetti effect script
+│    │── 🖼️ images/             # Image assets
+│    │── 🔠 fonts/              # Custom fonts (e.g., Montserrat)
+│── 📜 README.md           # Project documentation
+│── 📂 bootstrap-5.3.3-dist
 ```
 
-2. Install dependencies:
+---
+
+## 🔧 Setup & Installation
+
+### ✅ Prerequisites
+
+- A web browser (Chrome, Firefox, Edge, Safari)
+- **(Optional)** Live Server (VS Code Extension) for local preview
+- **(Optional)** Python (to run a local server)
+
+### 💻 Installation Steps
+
+1️⃣ **Clone the repository**  
 ```bash
-npm install
+git clone https://github.com/bohdanvn/portfolio-website
 ```
 
-3. Start development server:
+2️⃣ **Navigate to the project folder**  
 ```bash
-npm run dev
+cd portfolio-website
 ```
 
-## Performance
+3️⃣ **Run the project**  
+- **Open `index.html` in a browser (or `main.html` if bootstrap isn't working, than provide a path to `index.html`)**  
+- **Or start a local server:**  
 
-![Lighthouse Score](lighthouse-score.jpg)
+  - **Python (for Python 3.x)**  
+    ```bash
+    python -m http.server 8000
+    ```
+    Then visit `http://localhost:8000` in your browser.
 
-## Contributing
+  - **VS Code Live Server**  
+    - Install the "Live Server" extension.  
+    - Open `index.html`, right-click, and select **"Open with Live Server"**.  
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+---
 
-## License
+## ⚙️ Configuration & Customization
 
-[MIT](https://choosealicense.com/licenses/mit/)
+### 🔠 **Modify Typed.js Text Animation**
+Located in `script.js`, change the `strings` array:
+
+```js
+const typed = new Typed('#typed', {
+  strings: ["Web developer.", "Богом дан.", "Problem solver.", "Ready to work."],
+  typeSpeed: 50,
+  backSpeed: 30,
+  loop: true
+});
+```
+
+### 🌙 **Customize Dark/Light Mode**
+- **CSS Variables:** Modify colors in `style.css`
+- **JS Logic:** Theme toggles and stores user preference in `localStorage`
+
+### 📊 **Modify Skill Bars**
+Each skill bar has a `data-width` attribute in the HTML:
+
+```html
+<div class="skill-bar">
+  <div class="skill-level" data-width="80%"></div>
+</div>
+```
+
+### 🔢 **Modify Stats Counters**
+Edit the `data-target` values in HTML:
+
+```html
+<span class="stats-value" data-target="500">0</span>+
+```
+
+---
+
+## 🛠️ Troubleshooting & Support
+
+### ❓ **Common Issues & Fixes**
+
+| Issue | Solution |
+|-------|---------|
+| 🔲 Dark mode toggle not working | Clear browser cache & check console for errors |
+| 📊 Skill bars not animating | Ensure the section is in the viewport when scrolling |
+| 🏗️ Confetti effect missing | Ensure `confetti.min.js` is correctly linked |
+
+### 📩 **Need Help?**
+For issues, suggestions, or feature requests, feel free to open an issue on GitHub or contact me via email.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Follow these steps:
+
+1. **Fork the repository**  
+2. **Create a new branch:**  
+   ```bash
+   git checkout -b feature-branch
+   ```
+3. **Commit your changes:**  
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4. **Push to GitHub and create a pull request!**
+
+---
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 🎉 Final Notes
+
+Thanks for checking out my **My Portofolio Website**! If you like it, consider giving it a ⭐️ on GitHub. Enjoy coding! 🚀
+
