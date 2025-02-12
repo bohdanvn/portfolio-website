@@ -536,12 +536,14 @@ footer a:hover i {
   color: white;
 }
 
+/* Hide mobile sidebar on desktop */
+.mobile-sidebar {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block; /* Show on mobile */
-  }
-  
   .mobile-sidebar {
+    display: block; /* Now it can be visible on mobile */
     position: fixed;
     top: 0;
     left: -250px;
@@ -555,6 +557,10 @@ footer a:hover i {
   
   .mobile-sidebar.active {
     left: 0;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
   }
   
   .close-menu-btn {
